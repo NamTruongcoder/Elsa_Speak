@@ -63,14 +63,19 @@ const Header = () => {
         <Stack
           w="634px"
           align="center"
-          ml="114px"
+          ml={{ desktop: '114px' }}
           pt="71px"
           textTransform="uppercase"
         >
-          <Text fontSize="34px" textAlign="center" fontWeight="700" h="112px">
+          <Text fontSize="34px" textAlign="center" fontWeight="700">
             {parse(headerData[0].title)}
           </Text>
-          <Text color="#06BAE8" fontSize="18px" fontWeight="300">
+          <Text
+            textAlign="center"
+            color="#06BAE8"
+            fontSize="18px"
+            fontWeight="300"
+          >
             {headerData[0].slogan}
           </Text>
           <Button
@@ -101,7 +106,12 @@ const Header = () => {
             </Link>
           </Button>
         </Stack>
-        <Box pr="194px" h="406px" pos="relative">
+        <Box
+          pr="194px"
+          h="406px"
+          pos="relative"
+          display={{ mobile: 'none', desktop: 'block' }}
+        >
           <Image
             src="/assets/images/headerImg/phone.png"
             w="302px"
