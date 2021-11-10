@@ -40,22 +40,22 @@ function Navbar() {
 }
 const headerData = [
   {
-    title: 'app luyện nói & giao tiếp tiếng anh thời 4.0',
+    title: `app luyện nói  & giao tiếp tiếng anh thời 4.0`,
     slogan: 'với elsa speak - ai cũng có thể nói tiếng anh hay!',
   },
 ]
 const Header = () => {
+  const handleClick = () => {}
   return (
     <Box>
       <Navbar />
-      <Flex h="406px" pos="relative" justify="space-between" mt="94px">
+      <Flex minH="406px" pos="relative" justify="space-between" mt="94px">
         <Image
           src="/assets/images/headerImg/item1.png"
           pos="absolute"
-          w="109px"
-          h="109px"
+          boxSize="109px"
           opacity={0.5}
-          top="110px"
+          top="189px"
         />
         <Stack
           w="634px"
@@ -64,20 +64,25 @@ const Header = () => {
           pt="71px"
           textTransform="uppercase"
         >
-          <Text fontSize="30px" textAlign="center" fontWeight="bold" h="112px">
+          <Text fontSize="34px" textAlign="center" fontWeight="700" h="112px">
             {headerData[0].title}
           </Text>
-          <Text color="#06BAE8" fontSize="16px" h="33px">
+          <Text color="#06BAE8" fontSize="18px" fontWeight="300">
             {headerData[0].slogan}
           </Text>
           <Button
+            mt="32px !important"
             w="274px"
             h="67px"
-            fontSize="30px"
-            lineHeight="42px"
+            fontSize="24px"
             borderRadius="20px"
             fontWeight="700"
+            _hover={{
+              opacity: '0.8',
+            }}
             background="linear-gradient(80.25deg, #3DFFC8 1.31%, #40F6CF 15.32%, #49DCE1 38.61%, #57B3FF 68.19%);"
+            variant="none"
+            onClick={handleClick}
           >
             Đăng ký ngay
           </Button>
@@ -99,61 +104,55 @@ const Header = () => {
             zIndex="-1"
           >
             <IconButton
-              icon={<Icon icon="tabler:wave-sine" width="20px" h="20px" />}
-              w="43px"
-              h="43px"
+              icon={<Icon icon="tabler:wave-sine" />}
+              boxSize="44px"
               px="0"
-              top="60px"
+              top="36px"
               py="0"
               bgGradient="linear(to-b, #FCB23A, #F25C64)"
             />
             <IconButton
               icon={<Icon icon="bi:mic-fill" />}
-              w="43px"
-              h="43px"
+              boxSize="42px"
               px="0"
               py="0"
-              top="126px"
+              top="100px"
               right="66px"
               bgGradient="linear(to-b, #65d6fc, #489dfb)"
             />
             <IconButton
               icon={<Icon icon="fluent:headphones-32-filled" />}
-              w="43px"
-              h="43px"
+              boxSize="30px"
               px="0"
-              top="200px"
+              top="167px"
+              right="100px"
               py="0"
-              right="81px"
               bgGradient="linear(to-b, #F492A7, #F16D9D)"
             />
             <IconButton
-              w="20px"
-              h="20px"
+              boxSize="20px"
               borderRadius="2px"
               px="0"
-              top="240px"
+              top="238px"
               py="0"
-              right="124px"
+              right="88px"
               bg="#FFCF5D"
             />
             <IconButton
-              icon={<Icon icon="ri:message-2-fill" fontSize="24px" />}
-              w="50px"
-              h="50px"
+              icon={<Icon icon="ri:message-2-fill" fontSize="30px" />}
+              boxSize="56px"
               px="0"
-              top="240px"
+              top="102px"
               py="0"
-              right="124px"
+              right="-146px"
               bgGradient="linear(to-b,#AC5AFF, #7659FF)"
             />
             <IconButton
-              w="50px"
-              h="50px"
+              boxSize="32px"
               px="0"
-              top="240px"
+              top="289px"
               py="0"
-              right="150px"
+              right="-60px"
               bgGradient="linear(to-b,#AC5AFF, #7659FF)"
             />
           </Box>
@@ -182,10 +181,9 @@ const Header = () => {
           pos="absolute"
           zIndex="-1"
           src="/assets/images/headerImg/item2_blur.png"
-          w="233px"
-          h="233px"
-          bottom="0"
-          right="0"
+          boxSize="233px"
+          bottom="-60px"
+          right="-30px"
         />
       </Flex>
     </Box>
