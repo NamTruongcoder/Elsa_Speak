@@ -105,7 +105,8 @@ function BackgroundForm() {
               w="530px"
               h="74px"
               _hover={{
-                opacity: 0.8,
+                background:
+                  'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,178,127,1) 0%, rgba(0,146,179,1) 100%)',
               }}
               variant="none"
               borderRadius="14px"

@@ -1,34 +1,43 @@
-import { SimpleGrid, Box, Text, Image, Button } from '@chakra-ui/react'
+import { SimpleGrid, Box, Text, Image, Button, Heading } from '@chakra-ui/react'
+import parse from 'html-react-parser'
 const courseData = [
   {
     _id: 0,
     img: '/assets/images/courseImg/phone_3.png',
-    title: 'Trí tuệ nhân tạo trả về bạn số điểm "CHUẨN BẢN XỨ"',
+    title: 'Trí tuệ nhân tạo trả về bạn số điểm <b>"CHUẨN BẢN XỨ" </b> ',
   },
   {
     _id: 1,
     img: '/assets/images/courseImg/phone_4.png',
     title:
-      '"NGAY LẬP TỨC", bạn biết mình phát âm sai ở đâu qua những gam màu trực quan sinh động. ',
+      '<b>"NGAY LẬP TỨC"</b>, bạn biết mình phát âm sai ở đâu qua những gam màu trực quan sinh động. ',
   },
   {
     _id: 2,
     img: '/assets/images/courseImg/phone_2.png',
-    title: 'CÔNG NGHỆ NHẬN DIỆN giọng nói chuẩn đến từng âm tiết. ',
+    title: '<b>CÔNG NGHỆ NHẬN DIỆN</b> giọng nói chuẩn đến từng âm tiết. ',
   },
   {
     _id: 3,
     img: '/assets/images/courseImg/phone_1.png',
     title:
-      'ELSA sẽ LẬP LỘ TRÌNH HỌC CÁ NHÂN HOÁ dựa trên các chỉ số bài kiểm tra đầu vào của bạn. ',
+      'ELSA sẽ <b>LẬP LỘ TRÌNH HỌC CÁ NHÂN HOÁ</b> dựa trên các chỉ số bài kiểm tra đầu vào của bạn. ',
   },
 ]
 const Course = () => {
   return (
-    <Box textAlign="center" w="1140px" margin="0 auto">
-      <Box>
-        <Text fontSize="40px">Cá nhân hóa lộ trình học</Text>
-        <Text>
+    <Box textAlign="center" w="1140px" margin="0 auto" pt="60px">
+      <Box mb="40px">
+        <Text
+          fontSize="40px"
+          fontWeight="bold"
+          textTransform="uppercase"
+          color="#606060"
+          mb="20px"
+        >
+          Cá nhân hóa lộ trình học
+        </Text>
+        <Text color="#606060" fontSize="20px">
           Làm bài kiểm tra đầu vào với ELSA trong vòng 5 phút và bạn sẽ có :
         </Text>
       </Box>
@@ -36,15 +45,34 @@ const Course = () => {
       <SimpleGrid columns={4} spacing="10px">
         {courseData.map((course) => (
           <Box w="285px" key={course._id} px="20px">
-            <Box w="215px" margin="0 auto">
+            <Box w="255px" margin="0 auto">
               <Image src={course.img} alt="course" objectFit="cover" />
             </Box>
-            <Text mt="40px">{course.title}</Text>
+            <Text
+              textAlign="justify"
+              mt="40px"
+              fontSize="20px"
+              color="#606060"
+              lineHeight="1.5em"
+            >
+              {parse(course.title)}
+            </Text>
           </Box>
         ))}
       </SimpleGrid>
 
-      <Button background="linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,178,127,1) 0%, rgba(4,187,229,1) 100%)">
+      <Button
+        background="linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,178,127,1) 0%, rgba(4,187,229,1) 100%)"
+        _hover={{
+          background:
+            'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,178,127,1) 0%, rgba(0,146,179,1) 100%)',
+        }}
+        mt="40px"
+        w="307px"
+        h="60px"
+        fontSize="24px"
+        variant="none"
+      >
         ĐĂNG KÝ NGAY
       </Button>
     </Box>

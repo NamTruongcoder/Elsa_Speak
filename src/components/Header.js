@@ -78,7 +78,8 @@ const Header = () => {
             borderRadius="20px"
             fontWeight="700"
             _hover={{
-              opacity: '0.8',
+              background:
+                'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,178,127,1) 0%, rgba(0,146,179,1) 100%)',
             }}
             background="linear-gradient(80.25deg, #3DFFC8 1.31%, #40F6CF 15.32%, #49DCE1 38.61%, #57B3FF 68.19%);"
             variant="none"
