@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Elsa_Speak/static/css/main.c40dd825.chunk.css",
+    "main.js": "/Elsa_Speak/static/js/main.3a9c2664.chunk.js",
+    "main.js.map": "/Elsa_Speak/static/js/main.3a9c2664.chunk.js.map",
+    "runtime-main.js": "/Elsa_Speak/static/js/runtime-main.b8f661b5.js",
+    "runtime-main.js.map": "/Elsa_Speak/static/js/runtime-main.b8f661b5.js.map",
+    "static/js/2.cef69ce7.chunk.js": "/Elsa_Speak/static/js/2.cef69ce7.chunk.js",
+    "static/js/2.cef69ce7.chunk.js.map": "/Elsa_Speak/static/js/2.cef69ce7.chunk.js.map",
+    "index.html": "/Elsa_Speak/index.html",
+    "static/css/main.c40dd825.chunk.css.map": "/Elsa_Speak/static/css/main.c40dd825.chunk.css.map",
+    "static/js/2.cef69ce7.chunk.js.LICENSE.txt": "/Elsa_Speak/static/js/2.cef69ce7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b8f661b5.js",
+    "static/js/2.cef69ce7.chunk.js",
+    "static/css/main.c40dd825.chunk.css",
+    "static/js/main.3a9c2664.chunk.js"
+  ]
+}
