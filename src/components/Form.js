@@ -12,6 +12,8 @@ import {
   Button,
   Checkbox,
   HStack,
+  Text,
+  Spacer,
 } from '@chakra-ui/react'
 import { Icon } from '@iconify/react'
 // import { Formik, Form, Field, ErrorMessage } from 'formik'
@@ -43,48 +45,71 @@ function BackgroundForm() {
         top="64px"
       >
         <Box padding="16px 80px" bgGradient="linear(to-r,#49DCE1,  #38A3F8)">
-          <Heading as="h2" color="white">
+          <Text
+            textAlign="center"
+            fontSize="35px"
+            fontWeight="700"
+            color="#fff"
+          >
             CÙNG ỨNG DỤNG ELSA NÓI TIẾNG ANH "THẢ GA"
-          </Heading>
+          </Text>
         </Box>
-        <Box bg="white">
-          <FormControl px="32px" color="#06BAE8">
-            <FormLabel htmlFor="name">
+        <Box bg="white" p="32px">
+          <FormControl color="#06BAE8">
+            <FormLabel fontSize="25px" fontWeight="300" htmlFor="name">
               <Icon
                 icon="fa-regular:user"
                 style={{ display: 'inline-block', marginRight: '23px' }}
               />
               Họ tên *
             </FormLabel>
-            <Input type="name" id="name" />
-            <FormLabel htmlFor="phone">
+            <Input type="name" id="name" borderColor="#06BAE8" />
+            <FormLabel
+              mt="16px"
+              fontSize="25px"
+              fontWeight="300"
+              htmlFor="phone"
+            >
               <Icon
                 icon="carbon:phone"
                 style={{ display: 'inline-block', marginRight: '23px' }}
+                fonstSize="20px"
               />
               Số Điện thoại *
             </FormLabel>
-            <Input type="phone" id="phone" />
-            <FormLabel htmlFor="email">
+            <Input type="phone" id="phone" borderColor="#06BAE8" />
+            <FormLabel
+              mt="16px"
+              fontSize="25px"
+              fontWeight="300"
+              htmlFor="email"
+            >
               <Icon
                 icon="clarity:email-line"
                 style={{ display: 'inline-block', marginRight: '23px' }}
               />
               Email address *
             </FormLabel>
-            <Input type="email" id="email" />
-            <HStack spacing={10} direction="row">
-              <Checkbox size="lg" colorScheme="orange" defaultIsChecked>
+            <Input type="email" id="email" borderColor="#06BAE8" />
+            <HStack direction="row" mt="24px" mb="32px">
+              <Checkbox size="lg" borderColor="#06BAE8">
                 Gói học 1 năm
               </Checkbox>
-              <Checkbox size="lg" colorScheme="orange" defaultIsChecked>
-                Góitrọn đời
+              <Spacer />
+              <Checkbox size="lg" borderColor="#06BAE8">
+                Gói trọn đời
               </Checkbox>
             </HStack>
             <Button
               background="linear-gradient(80.25deg, #3DFFC8 1.31%, #40F6CF 15.32%, #49DCE1 38.61%, #57B3FF 68.19%)"
-              w="100%"
-              borderRadius="15px"
+              w="530px"
+              h="74px"
+              _hover={{
+                opacity: 0.8,
+              }}
+              variant="none"
+              borderRadius="14px"
+              fontSize="22px"
             >
               GỬI ĐĂNG KÝ
             </Button>
