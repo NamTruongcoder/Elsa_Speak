@@ -1,9 +1,13 @@
 import './App.css'
-import { Button } from '@chakra-ui/react'
+import Course from './components/Course'
+import Form from './components/Form'
+import Header from './components/Header'
 function App() {
   return (
     <div className="App">
-      <Button>123</Button>
+      <Header />
+      <Form />
+      <Course />
     </div>
   )
 }
