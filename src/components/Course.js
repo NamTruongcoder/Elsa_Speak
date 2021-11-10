@@ -1,4 +1,13 @@
-import { SimpleGrid, Box, Text, Image, Button, Heading } from '@chakra-ui/react'
+import {
+  SimpleGrid,
+  Box,
+  Text,
+  Image,
+  Button,
+  Heading,
+  Link,
+  Flex,
+} from '@chakra-ui/react'
 import parse from 'html-react-parser'
 const courseData = [
   {
@@ -26,7 +35,7 @@ const courseData = [
 ]
 const Course = () => {
   return (
-    <Box textAlign="center" w="1140px" margin="0 auto" pt="60px">
+    <Box textAlign="center" margin="0 auto" pt="60px">
       <Box mb="40px">
         <Text
           fontSize="40px"
@@ -42,22 +51,24 @@ const Course = () => {
         </Text>
       </Box>
 
-      <SimpleGrid columns={4} spacing="10px">
+      <SimpleGrid columns={{ mobile: 1, tablet: 2, desktop: 4 }} spacing="10px">
         {courseData.map((course) => (
-          <Box w="285px" key={course._id} px="20px">
-            <Box w="255px" margin="0 auto">
-              <Image src={course.img} alt="course" objectFit="cover" />
+          <Flex justify="center">
+            <Box w="285px" key={course._id} px="20px">
+              <Box w="255px" margin="0 auto">
+                <Image src={course.img} alt="course" objectFit="cover" />
+              </Box>
+              <Text
+                textAlign="justify"
+                mt="40px"
+                fontSize="20px"
+                color="#606060"
+                lineHeight="1.5em"
+              >
+                {parse(course.title)}
+              </Text>
             </Box>
-            <Text
-              textAlign="justify"
-              mt="40px"
-              fontSize="20px"
-              color="#606060"
-              lineHeight="1.5em"
-            >
-              {parse(course.title)}
-            </Text>
-          </Box>
+          </Flex>
         ))}
       </SimpleGrid>
 
@@ -72,8 +83,18 @@ const Course = () => {
         h="60px"
         fontSize="24px"
         variant="none"
+        id="form"
       >
-        ĐĂNG KÝ NGAY
+        <Link
+          href="#Form"
+          py="16px"
+          px="30px"
+          style={{
+            textDecoration: 'none',
+          }}
+        >
+          Đăng Kí Ngay
+        </Link>
       </Button>
     </Box>
   )

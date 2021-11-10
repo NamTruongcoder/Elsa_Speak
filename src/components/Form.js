@@ -16,7 +16,8 @@ import {
   Spacer,
 } from '@chakra-ui/react'
 import { Icon } from '@iconify/react'
-// import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { useState } from 'react'
+import isEmpty from 'validator/lib/isEmpty'
 function BackgroundForm() {
   return (
     <Box minH="830px" bg="#0C2440" pos="relative">
@@ -35,19 +36,81 @@ function BackgroundForm() {
       <Box pos="absolute" bottom="210px" right="800px" boxSize="30px">
         <Image src="/assets/images/formImg/circel.png" alt="square" />
       </Box>
+    </Box>
+  )
+}
+const FormAccout = () => {
+  const [username, setUsername] = useState('')
+  const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
+  const [checked, setChecked] = useState('')
+  const [validationMsg, setValidationMsg] = useState('')
+  const onChangeUserName = (e) => {
+    const value = e.target.value
+    console.log(value)
+    setUsername(value)
+  }
+  const onChangePhone = (e) => {
+    const value = e.target.value
+    setPhone(value)
+  }
+  const onChangeEmail = (e) => {
+    const value = e.target.value
+    setEmail(value)
+  }
+  const handleCheck = (e) => {
+    setChecked(e.target.value === 'lifetime' ? 'lifetime' : 'year')
+  }
+  const validateAll = () => {
+    const msg = {}
+    if (isEmpty(email)) {
+      msg.email = 'Please input your Email'
+    }
+    if (!isEmpty(email) && email.search(/^.+@.+\..+$/i) === -1) {
+      msg.email = 'Email is wrong format '
+    }
+    if (isEmpty(username)) {
+      msg.username = 'Please input your name'
+    }
+    if (isEmpty(phone)) {
+      msg.phone = 'Please input your phone'
+    }
+    if (!isEmpty(phone) && phone.search(/\d/i) === -1) {
+      msg.phone = 'Phone is wrong format'
+    }
+    if (isEmpty(checked)) {
+      msg.checked = 'Please choose one course'
+    }
+    setValidationMsg(msg)
+    if (Object.keys(msg).length > 0) return false
+    return true
+  }
+  const onSubmit = () => {
+    const isValid = validateAll()
+    if (!isValid) return
+    // Call API submit
+    alert('Ban da dang ky thanh cong')
+  }
+  return (
+    <>
+      <BackgroundForm />
       {/* Form */}
       <Box
-        w="600px"
+        maxW={{ mobile: '400px', tablet: '600px' }}
         borderRadius="15px"
         overflow="hidden"
-        pos="absolute"
-        left="131px"
-        top="64px"
+        pos={{ mobile: 'relative', desktop: 'absolute' }}
+        left={{ desktop: '131px' }}
+        top={{ desktop: '20%' }}
+        mt="60px"
+        ml="auto"
+        mr="auto"
+        id="Form"
       >
         <Box padding="16px 80px" bgGradient="linear(to-r,#49DCE1,  #38A3F8)">
           <Text
             textAlign="center"
-            fontSize="35px"
+            fontSize={{ mobile: '18px', desktop: '35px' }}
             fontWeight="700"
             color="#fff"
           >
@@ -63,7 +126,14 @@ function BackgroundForm() {
               />
               Họ tên *
             </FormLabel>
-            <Input type="name" id="name" borderColor="#06BAE8" />
+            <Input
+              value={username}
+              type="name"
+              id="name"
+              borderColor="#06BAE8"
+              onChange={onChangeUserName}
+            />
+            <Text color="red">{validationMsg.username}</Text>
             <FormLabel
               mt="16px"
               fontSize="25px"
@@ -77,7 +147,14 @@ function BackgroundForm() {
               />
               Số Điện thoại *
             </FormLabel>
-            <Input type="phone" id="phone" borderColor="#06BAE8" />
+            <Input
+              value={phone}
+              type="phone"
+              id="phone"
+              borderColor="#06BAE8"
+              onChange={onChangePhone}
+            />
+            <Text color="red">{validationMsg.phone}</Text>
             <FormLabel
               mt="16px"
               fontSize="25px"
@@ -90,19 +167,84 @@ function BackgroundForm() {
               />
               Email address *
             </FormLabel>
-            <Input type="email" id="email" borderColor="#06BAE8" />
+            <Input
+              value={email}
+              type="email"
+              id="email"
+              borderColor="#06BAE8"
+              onChange={onChangeEmail}
+            />
+            <Text color="red">{validationMsg.email}</Text>
             <HStack direction="row" mt="24px" mb="32px">
-              <Checkbox size="lg" borderColor="#06BAE8">
+              <Checkbox
+                size="lg"
+                value="year"
+                borderColor="#06BAE8"
+                isChecked={checked === 'year'}
+                onChange={handleCheck}
+              >
                 Gói học 1 năm
               </Checkbox>
               <Spacer />
-              <Checkbox size="lg" borderColor="#06BAE8">
+              <Checkbox
+                size="lg"
+                value="lifetime"
+                borderColor="#06BAE8"
+                isChecked={checked === 'lifetime'}
+                onChange={handleCheck}
+              >
                 Gói trọn đời
               </Checkbox>
             </HStack>
+            {checked === 'year' ? (
+              <Box>
+                <Text
+                  textAlign="center"
+                  fontSize="30px"
+                  color="#0bbae7"
+                  fontWeight="600"
+                >
+                  989.000 VND
+                </Text>
+                <Text
+                  textAlign="center"
+                  fontSize="20px"
+                  color="red"
+                  fontStyle="italic"
+                  py="16px"
+                >
+                  ELSA trợ giá mùa dịch - Nhập mã COVID50 giảm thêm 50K khi
+                  thanh toán online
+                </Text>
+              </Box>
+            ) : checked === 'lifetime' ? (
+              <Box>
+                <Text
+                  textAlign="center"
+                  fontSize="30px"
+                  color="#0bbae7"
+                  fontWeight="600"
+                >
+                  1.995.000 VND
+                </Text>
+                <Text
+                  textAlign="center"
+                  fontSize="20px"
+                  color="red"
+                  fontStyle="italic"
+                  py="16px"
+                >
+                  ELSA trợ giá mùa dịch - Nhập mã COVID50 giảm thêm 50K khi
+                  thanh toán online
+                </Text>
+              </Box>
+            ) : (
+              ''
+            )}
+            <Text color="red">{validationMsg.checked}</Text>
             <Button
               background="linear-gradient(80.25deg, #3DFFC8 1.31%, #40F6CF 15.32%, #49DCE1 38.61%, #57B3FF 68.19%)"
-              w="530px"
+              w="100%"
               h="74px"
               _hover={{
                 background:
@@ -111,21 +253,15 @@ function BackgroundForm() {
               variant="none"
               borderRadius="14px"
               fontSize="22px"
+              type="submit"
+              onClick={onSubmit}
             >
               GỬI ĐĂNG KÝ
             </Button>
           </FormControl>
         </Box>
       </Box>
-    </Box>
-  )
-}
-const FormAccout = () => {
-  return (
-    <>
-      <BackgroundForm />
     </>
   )
 }
-
 export default FormAccout

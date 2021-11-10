@@ -10,6 +10,7 @@ import {
   Link,
 } from '@chakra-ui/react'
 import { Icon } from '@iconify/react'
+import parse from 'html-react-parser'
 function Navbar() {
   return (
     <HStack
@@ -40,12 +41,14 @@ function Navbar() {
 }
 const headerData = [
   {
-    title: `app luyện nói  & giao tiếp tiếng anh thời 4.0`,
+    title: 'app luyện nói <br>  & giao tiếp tiếng anh thời 4.0',
     slogan: 'với elsa speak - ai cũng có thể nói tiếng anh hay!',
   },
 ]
 const Header = () => {
-  const handleClick = () => {}
+  const handleClick = () => {
+    console.log('dkngay')
+  }
   return (
     <Box>
       <Navbar />
@@ -60,12 +63,12 @@ const Header = () => {
         <Stack
           w="634px"
           align="center"
-          pl="114px"
+          ml="114px"
           pt="71px"
           textTransform="uppercase"
         >
           <Text fontSize="34px" textAlign="center" fontWeight="700" h="112px">
-            {headerData[0].title}
+            {parse(headerData[0].title)}
           </Text>
           <Text color="#06BAE8" fontSize="18px" fontWeight="300">
             {headerData[0].slogan}
@@ -77,6 +80,7 @@ const Header = () => {
             fontSize="24px"
             borderRadius="20px"
             fontWeight="700"
+            py="0"
             _hover={{
               background:
                 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,178,127,1) 0%, rgba(0,146,179,1) 100%)',
@@ -85,7 +89,16 @@ const Header = () => {
             variant="none"
             onClick={handleClick}
           >
-            Đăng ký ngay
+            <Link
+              href="#Form"
+              py="16px"
+              px="30px"
+              style={{
+                textDecoration: 'none',
+              }}
+            >
+              Đăng Kí Ngay
+            </Link>
           </Button>
         </Stack>
         <Box pr="194px" h="406px" pos="relative">
@@ -184,7 +197,7 @@ const Header = () => {
           src="/assets/images/headerImg/item2_blur.png"
           boxSize="233px"
           bottom="-60px"
-          right="-30px"
+          right="0"
         />
       </Flex>
     </Box>
