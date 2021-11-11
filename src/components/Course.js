@@ -12,23 +12,23 @@ import parse from 'html-react-parser'
 const courseData = [
   {
     _id: 0,
-    img: '/assets/images/courseImg/phone_3.png',
+    img: './assets/images/courseImg/phone_3.png',
     title: 'Trí tuệ nhân tạo trả về bạn số điểm <b>"CHUẨN BẢN XỨ" </b> ',
   },
   {
     _id: 1,
-    img: '/assets/images/courseImg/phone_4.png',
+    img: './assets/images/courseImg/phone_4.png',
     title:
       '<b>"NGAY LẬP TỨC"</b>, bạn biết mình phát âm sai ở đâu qua những gam màu trực quan sinh động. ',
   },
   {
     _id: 2,
-    img: '/assets/images/courseImg/phone_2.png',
+    img: './assets/images/courseImg/phone_2.png',
     title: '<b>CÔNG NGHỆ NHẬN DIỆN</b> giọng nói chuẩn đến từng âm tiết. ',
   },
   {
     _id: 3,
-    img: '/assets/images/courseImg/phone_1.png',
+    img: './assets/images/courseImg/phone_1.png',
     title:
       'ELSA sẽ <b>LẬP LỘ TRÌNH HỌC CÁ NHÂN HOÁ</b> dựa trên các chỉ số bài kiểm tra đầu vào của bạn. ',
   },

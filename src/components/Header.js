@@ -27,7 +27,7 @@ function Navbar() {
     >
       <Link href="#">
         <Image
-          src="/assets/images/logo_elsa.png"
+          src="./assets/images/logo_elsa.png"
           alt="logoElsa"
           w="62px"
           h="62px"
@@ -54,7 +54,7 @@ const Header = () => {
       <Navbar />
       <Flex minH="406px" pos="relative" justify="space-between" mt="94px">
         <Image
-          src="/assets/images/headerImg/item1.png"
+          src="./assets/images/headerImg/item1.png"
           pos="absolute"
           boxSize="109px"
           opacity={0.5}
@@ -82,6 +82,7 @@ const Header = () => {
             mt="32px !important"
             w="274px"
             h="67px"
+            zIndex="10"
             fontSize="24px"
             borderRadius="20px"
             fontWeight="700"
@@ -106,17 +107,22 @@ const Header = () => {
             </Link>
           </Button>
         </Stack>
+        <Image
+          src="./assets/images/headerImg/phone.png"
+          pos="absolute"
+          right="190px"
+          w="302px"
+          overflow="hidden"
+          zIndex="2"
+          display={{ mobile: 'none', desktop: 'block' }}
+        />
+
         <Box
           pr="194px"
           h="406px"
           pos="relative"
           display={{ mobile: 'none', desktop: 'block' }}
         >
-          <Image
-            src="/assets/images/headerImg/phone.png"
-            w="302px"
-            overflow="hidden"
-          />
           <Box
             borderRadius="100%"
             border="4px solid #ECECEC"
@@ -125,7 +131,7 @@ const Header = () => {
             right="194px"
             w="318px"
             h="318px"
-            zIndex="-1"
+            zIndex="1"
           >
             <IconButton
               icon={<Icon icon="tabler:wave-sine" />}
@@ -188,7 +194,7 @@ const Header = () => {
             right="233px"
             w="246px"
             h="246px"
-            zIndex="-1"
+            zIndex="1"
           ></Box>
           <Box
             borderRadius="100%"
@@ -198,13 +204,13 @@ const Header = () => {
             right="270px"
             w="168px"
             h="168px"
-            zIndex="-1"
+            zIndex="1"
           ></Box>
         </Box>
         <Image
+          zIndex="0"
           pos="absolute"
-          zIndex="-1"
-          src="/assets/images/headerImg/item2_blur.png"
+          src="./assets/images/headerImg/item2_blur.png"
           boxSize="233px"
           bottom="-60px"
           right="0"

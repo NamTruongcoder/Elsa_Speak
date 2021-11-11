@@ -20,21 +20,21 @@ import { useState } from 'react'
 import isEmpty from 'validator/lib/isEmpty'
 function BackgroundForm() {
   return (
-    <Box minH="830px" bg="#0C2440" pos="relative">
+    <Box minH="830px" bg="#0C2440" pos="relative" zIndex="2">
       <Box pos="absolute" right="0" top="80px" zIndex="10">
-        <Image src="/assets/images/formImg/Phone 15 1.png" alt="phone" />
+        <Image src="./assets/images/formImg/Phone 15 1.png" alt="phone" />
       </Box>
       <Box pos="absolute" right="52px" bottom="250px">
-        <Image src="/assets/images/formImg/square_pink.png" alt="square" />
+        <Image src="./assets/images/formImg/square_pink.png" alt="square" />
       </Box>
       <Box pos="absolute" right="250px" top="175px" zIndex="1">
-        <Image src="/assets/images/formImg/square_yellow.png" alt="square" />
+        <Image src="./assets/images/formImg/square_yellow.png" alt="square" />
       </Box>
       <Box pos="absolute" bottom="150px" right="465px">
-        <Image src="/assets/images/formImg/circel.png" alt="square" />
+        <Image src="./assets/images/formImg/circel.png" alt="square" />
       </Box>
       <Box pos="absolute" bottom="210px" right="800px" boxSize="30px">
-        <Image src="/assets/images/formImg/circel.png" alt="square" />
+        <Image src="./assets/images/formImg/circel.png" alt="square" />
       </Box>
     </Box>
   )
@@ -106,6 +106,7 @@ const FormAccout = () => {
         ml="auto"
         mr="auto"
         id="Form"
+        zIndex="10"
       >
         <Box padding="16px 80px" bgGradient="linear(to-r,#49DCE1,  #38A3F8)">
           <Text
